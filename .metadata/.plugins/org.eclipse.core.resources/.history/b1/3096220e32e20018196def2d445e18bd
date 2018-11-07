@@ -1,0 +1,21 @@
+package com.example.demo.lombok.step1;
+
+import lombok.AllArgsConstructor;
+
+// 론복이 알아서 만들어준다
+@AllArgsConstructor
+public class User {
+	
+	int id;
+	String name;
+	String email;
+	
+//	public User(int id, String name, String email) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.email = email;
+//	}
+	
+	
+}

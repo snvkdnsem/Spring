@@ -1,0 +1,12 @@
+package com.example.demo.lombok.step1;
+
+public class MemberTest {
+	
+	public static void main(String [] args) {
+		Member member = new Member(1, "Tom", "Cruise@acdds");
+		
+		System.out.println(member.Id);
+		System.out.println(member.Id);
+		System.out.println(member.Id);
+	}
+}

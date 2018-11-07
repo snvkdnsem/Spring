@@ -1,0 +1,11 @@
+package com.example.demo.ioc.step5;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		CarMaker maker = new HyundaiMaker();
+		OrderManager manager = new OrderManager();
+		
+		manager.order();
+	}
+}

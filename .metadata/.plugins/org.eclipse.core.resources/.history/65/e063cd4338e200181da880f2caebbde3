@@ -1,0 +1,11 @@
+package com.example.demo.lombok.step1;
+
+import lombok.Getter;
+
+@Getter
+@
+public class Emp {
+	private int empno;
+	private String ename;
+	private String job;
+}

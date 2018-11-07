@@ -1,0 +1,19 @@
+package com.example.demo.lombok.step1;
+
+public class EmpTest2 {
+
+	public static void main(String[] args) {
+		Emp emp = new Emp(10, "Jonh", "Developer");
+		Emp emp2 = emp;
+		
+		// 동일 비교 
+		System.out.println(emp == emp2); // true
+		
+		Emp emp3 = new Emp(10, "Jonh", "Developer");
+		
+		System.out.println(emp == emp3); // emp3는 객체를 따로 만들었으므로 false
+		
+		// 객체는 참조가 다르면 다르다고 판단해야 합니다 
+	}
+	
+}
