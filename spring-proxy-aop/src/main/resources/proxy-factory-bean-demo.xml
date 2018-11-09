@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+	Hello hello = new Hello();
+	
+	Advice advice = new MyAdvice();
+	
+	ProxyFactory factory = new ProxyFactory();
+	factory.setTarget(hello);
+	factory.addAdvice(advice);
+	
+	Hello proxy = (Hello)factory.getProxy();
+-->
+
+	<bean id="hello" class="com.example.demo.proxy.step7.Hello"></bean>
+	
+	<bean id="advice" class="com.example.demo.proxy.step7.MyAdvice">
+	</bean>
+	
+	<!-- 
+	ProxyFactory factory = new ProxyFactory();
+	factory.setTarget(hello);
+	factory.addAdvice(advice);
+	
+	Hello proxy = (Hello)factory.getProxy();
+	-->
+	
+	<!--
+		ProxyFactoryBean은 target 객체를 프록싱하는 객체를 빈컨테이너에 등록한다.
+		즉, ProxyFactoryBean를 빈컨테이너에 등록하는것이 아니라 ref="hello"가 들어가므로 id가 proxy이어야한다.	
+	-->
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+	<property name="target" ref="hello"></property>
+	<!-- interceptorNames는 문자열을 여러개 갖을 것이다. -->
+	<property name="interceptorNames">
+		<list>
+			<value>advice</value>
+		</list>
+	</property>
+	</bean>
+
+</beans>
